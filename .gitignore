@@ -1,0 +1,16 @@
+# Certs & keys — never commit private key material
+*.key
+*.crt
+*.pem
+*.crl
+ca/
+certs/
+
+# Project-specific generated state (harmless if unused in a given repo)
+ct_state/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
