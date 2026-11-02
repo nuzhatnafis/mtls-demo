@@ -59,7 +59,7 @@ Expected output:
 [*] This is expected — the server requires a client certificate and we didn't send one.
 ```
 
-## How the identity flows
+## How the identity flaws
 
 1. `setup_certs.py` creates a CA, then issues a server cert (CN=localhost)
    and a client cert (CN=demo-client-01), both signed by that CA.
@@ -70,14 +70,6 @@ Expected output:
    pulls the client's Common Name straight out of the verified
    certificate to know who's talking to it.
 
-## Ideas to extend
-
-- Issue multiple client certs for different "users" and have the server
-  authorize different endpoints based on CN (simple RBAC via certs)
-- Add client certificate revocation checking (wire in `revocation-checker`)
-- Swap the hand-rolled CA in `setup_certs.py` for `mini-ca-toolkit`'s
-  intermediate hierarchy, for a more realistic multi-tier setup
-- Containerize server and client separately to simulate real service-to-service mTLS
 
 ## License
 
